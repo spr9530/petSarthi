@@ -19,8 +19,13 @@ function Homepage() {
     return (
         <>
             <Sidebar />
-            <section className='relative'>
+            <div className='p-8 bg-slate-900 '></div>
+            <section className='relative  h-[850px] bg-slate-900 '>
+                <h2 className='text-white font-semibold text-[3.2rem] w-[70%] mx-auto text-center'>Compassionate Guidance for  Your Pet's Health and Well-Being</h2>
+                <h4 className='text-white font-semibold text-[1.25rem] w-[80%] mx-auto text-center'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque velit molestias et. Quisquam, tempora dicta.</h4>
+                <div className='h-full'>
                 <Slider data={data} activeSlide={2}></Slider>
+                </div>
                 <div className='absolute w-full flex justify-center -bottom-20'>
                     <SearchCard></SearchCard>
                 </div>

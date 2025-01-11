@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { FaChevronRight, FaChevronLeft } from "react-icons/fa";
+import { FaArrowRight } from 'react-icons/fa';
+
 
 export default (props) => {
   const [activeSlide, setactiveSlide] = useState(props.activeSlide);
@@ -57,15 +59,17 @@ export default (props) => {
   return (
     <>
       {/* carousel */}
-     <div className="w-[screen] h-screen flex justify-center pl-[240px] overflow-hidden">
-     <div className="slideC h-full w-[100%]">
+     <div className="h-[40%] flex flex-col items-center  pl-[240px] overflow-hidden">
+     <div className="slideC h-full w-[70%]">
         {props.data.map((item, i) => (
           <React.Fragment key={item.id}>
             <div
-              className="slide h-[90%] w-[85%] mx-auto"
+              className="slide h-[100%] w-[70%] mx-auto"
               style={{
-                background: item.bgColor,
-                boxShadow: `0 5px 20px ${item.bgColor}30`,
+
+                backgroundColor: `white`,
+                background: item.background,
+                boxShadow: `0 5px 20px 30`,
                 ...getStyles(i)
               }}
             >
@@ -77,26 +81,34 @@ export default (props) => {
                 background: `linear-gradient(to bottom, ${item.bgColor}40, transparent)`,
                 ...getStyles(i)
               }}
+              
             />
           </React.Fragment>
         ))}
       </div>
+      
      </div>
-      {/* carousel */}
-
-      {/* <div className="btns">
+     <div className="btns w-full text-white flex justify-center items-center mt-8 mx-auto">
         <FaChevronLeft  onClick={prev}/>
         <FaChevronRight onClick={next} />
-      </div> */}
+      </div>
+      <div className="w-full flex p-6 justify-center gap-5">
+        <button className="w-52 rounded-full text-2xl font-semibold p-3 bg-yellow-500 flex gap-2 items-center justify-center">Book Now <FaArrowRight></FaArrowRight> </button>
+        <button className="w-52 rounded-full text-2xl font-semibold p-3 bg-yellow-500 flex gap-2 items-center justify-center">Book Now <FaArrowRight></FaArrowRight> </button>
+      </div>
+      {/* carousel */}
+
+      
     </>
   );
 };
 
 const SliderContent = (props) => {
   return (
-    <div className="sliderContent w-[70%]">
-      <h2>{props.title}</h2>
-      <p>{props.desc}</p>
+    <div className="sliderContent w-full">
+      {/* <h2>{props.title}</h2>
+      <p>{props.desc}</p> */}
+
     </div>
   );
 };
